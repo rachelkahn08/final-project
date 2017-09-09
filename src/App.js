@@ -1,10 +1,11 @@
 import React, { Component } from 'react';
-
-import Header from "./Header";
 import Sidebar from "./Sidebar";
 import CategoryPage from "./CategoryPage";
 import ImageCollection from "./ImageCollection";
 import ImageDetail from "./ImageDetail"; 
+import Login from './Login';
+import Register from './Register';
+import Uploader from './Uploader';
 
 import {BrowserRouter, Switch, Route} from "react-router-dom";
 import './_App.css';
@@ -46,17 +47,22 @@ class App extends Component {
 
       <BrowserRouter>
         <div className="App">
-          <Header/>
 
           <Sidebar/>
 
           <div className="App-Main">
             <Switch>
-              <Route path="/" exact component={() => ImageCollectionWrapper(this.state.images)} />
-              <Route path="/image/:id" component={ImageDetail} />
-              <Route path="/categories/cat" component={() => CategoryWrapper(this.state.images, "cat")} />
-              <Route path="/categories/dog" component={() => CategoryWrapper(this.state.images, "dog")} />
-              <Route path="/categories" component={CategoryPage} />
+              <Route path="/~michele.james/build/" exact component={() => ImageCollectionWrapper(this.state.images)} />
+              <Route path="/~michele.james/build/image/:id" component={ImageDetail} />
+              <Route path="/~michele.james/build/categories/cat" component={() => CategoryWrapper(this.state.images, "cat")} />
+              <Route path="/~michele.james/build/categories/dog" component={() => CategoryWrapper(this.state.images, "dog")} />
+              <Route path="/~michele.james/build/categories" component={CategoryPage} />
+              <Route path="/~michele.james/build/" exact component={ App } />
+              <Route path="/~michele.james/build/Login" component={ Login } />
+              <Route path="/~michele.james/build/Register" component={ Register } />
+              <Route path="/~michele.james/build/Uploader" component={ Uploader } />
+              <Route path="/~michele.james/build/CategoryPage" component={ CategoryPage } />
+              <Route path="/~michele.james/build/ImageCollection" component={ ImageCollection } />
             </Switch>
           </div>
 

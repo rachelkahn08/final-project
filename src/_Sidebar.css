@@ -9,6 +9,7 @@
 	flex-wrap: nowrap;
 	z-index: 2;
 	background-color: #ede5d7;
+	background: transparent;
 }
 
 .logo {
