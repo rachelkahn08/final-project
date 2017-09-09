@@ -40,6 +40,7 @@ class Sidebar extends Component {
           <NavLink className="NavLink" to="./ImageCollection">All Images</NavLink>
           <NavLink className="NavLink" to="./Uploader">Upload Images</NavLink>
           <NavLink className="NavLink" to={ loggedInOption }>{ loginLinkText }</NavLink>
+          <NavLink className="NavLink" to="./Register">Register</NavLink>
         </nav>
       </div>
     );
