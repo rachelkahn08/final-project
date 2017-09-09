@@ -7,6 +7,8 @@ import CategoryPage from "./CategoryPage";
 import ImageCollection from "./ImageCollection";
 import ImageDetail from "./ImageDetail"; 
 import Uploader from "./Uploader";
+import Register from '../'
+import Login from '../'
 
 import {BrowserRouter, Switch, Route} from "react-router-dom";
 
