@@ -1,0 +1,33 @@
+.Sidebar {
+	height: 100%;
+	width:  95%;
+	position: fixed;
+	left: 0;
+	top: 0;
+	display: flex;
+	flex-direction: column;
+	flex-wrap: nowrap;
+	z-index: 2;
+	background-color: #ede5d7;
+}
+
+.logo {
+
+}
+
+.NavLinkContainer {
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+}
+
+.NavLink {
+	width: 100%;
+	text-align: left;
+}
+
+@media screen and min-width(600px) {
+	.Sidebar {
+		width: 90%;
+	}
+}

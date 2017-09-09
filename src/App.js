@@ -1,16 +1,13 @@
 import React, { Component } from 'react';
-import './App.css';
 
 import Header from "./Header";
 import Sidebar from "./Sidebar";
 import CategoryPage from "./CategoryPage";
 import ImageCollection from "./ImageCollection";
 import ImageDetail from "./ImageDetail"; 
-import Uploader from "./Uploader";
-import Register from '../'
-import Login from '../'
 
 import {BrowserRouter, Switch, Route} from "react-router-dom";
+import './_App.css';
 
 const ImageCollectionWrapper = (images) => (
   <ImageCollection images={images} />
@@ -53,8 +50,6 @@ class App extends Component {
 
           <Sidebar/>
 
-          <Uploader />
-
           <div className="App-Main">
             <Switch>
               <Route path="/" exact component={() => ImageCollectionWrapper(this.state.images)} />
@@ -62,7 +57,6 @@ class App extends Component {
               <Route path="/categories/cat" component={() => CategoryWrapper(this.state.images, "cat")} />
               <Route path="/categories/dog" component={() => CategoryWrapper(this.state.images, "dog")} />
               <Route path="/categories" component={CategoryPage} />
-              <Route path="/uploads" component={Uploader} />
             </Switch>
           </div>
 
