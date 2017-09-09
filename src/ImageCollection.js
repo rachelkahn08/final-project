@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import './App.css';
 
 import {Link} from "react-router-dom";
 class ImageCollection extends Component {
@@ -15,23 +14,7 @@ class ImageCollection extends Component {
     return (
       <div className = "gallery">
       IMAGE GALLERY:
-      {images.map(image => (
-      		<div key={image.id} className="gallery__image">
-
-      			<Link to={`/image/${image.id}`}>
-      				{image.title}<br/>
-      			</Link>
-
-      			<Link to={`/image/${image.id}`}>
-      				{image.thumblink}<br/>
-      			</Link>
-
-      			{image.imagelink}<br/>
-      			{image.description}<br/>
-      			{image.thumblink}<br/>
-	      		<br/>
-      		</div>
-      	))}
+      
       </div>
 
     );
@@ -39,3 +22,21 @@ class ImageCollection extends Component {
 }
 
 export default ImageCollection;
+
+// {images.map(image => (
+//           <div key={image.id} className="gallery__image">
+
+//             <Link to={`/image/${image.id}`}>
+//               {image.title}<br/>
+//             </Link>
+
+//             <Link to={`/image/${image.id}`}>
+//               {image.thumblink}<br/>
+//             </Link>
+
+//             {image.imagelink}<br/>
+//             {image.description}<br/>
+//             {image.thumblink}<br/>
+//             <br/>
+//           </div>
+//         ))}

@@ -7,8 +7,8 @@ export default class Register extends Component {
 		
 		return (
 		
-			<title>Register</title> 
 			<div>
+				<title>Register</title> 
 				<form action="../../" method="POST">
 					Email Address: <input type="text" name="emailInput"/><br />
 					Password: <input type="password" name="passwordInput"/><br />
@@ -17,14 +17,13 @@ export default class Register extends Component {
 					Last Name: <input type="text" name="lastNameInput"/><br />
 					 <input type="submit" value="save"/>
 				</form>
+				<a href="../../">Log in </a>
 			</div>
 		
 
-			<a href="../../">Log in </a>
+			
 
 				
 		)
 	}
 }
-
-export default Register;
