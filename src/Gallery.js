@@ -9,11 +9,25 @@ export default class Gallery extends Component {
 		this.state = {
 			type: 'gallery',
 			direction: 'GET',
+			queryInputs: '',
+			returnedData: {},
 		}
 	}
 
 	componentDidMount() {
-		
+		if (this.props.type) {
+			this.setState({type: this.props.type});
+		}
+
+		if (this.props.direction) {
+			this.setState({direction: this.props.direction});
+		}
+
+		if (this.props.queryInputs) {
+			this.setState({queryInputs: this.props.queryInputs});
+		}
+
+		this.fetchImages(this.props.type, this.props.direction, this.props.queryInputs);
 	}
 
 	fetchImages(type, direction, queryInputs) {
@@ -23,18 +37,18 @@ export default class Gallery extends Component {
 		var stringifyInputs = Object.entries(queryInputs);
 
 		for (var i = stringifyInputs.length - 1; i >= 0; i--) {
-			if (i  )
-			url += (stringifyInputs[i][0] + '=' + stringifyInputs[i][1]);
+			url += '&' + (stringifyInputs[i][0] + '=' + stringifyInputs[i][1]);
 		}
 
 		fetch(url, {
 			method: direction,
 			headers: {
-				'Content-Type': 'application/json'
+				'Content-Type': 'application/json',
+				'Accept': 'application/json',
 			}
 		}).then( response => response.json() )
 		.then( json => {
-			this.setState({images: json});
+			this.setState({returnedData: json});
 		});
 	}
 
@@ -47,5 +61,3 @@ export default class Gallery extends Component {
 		);
 	}
 }
-
-//const images = this.state.images;
