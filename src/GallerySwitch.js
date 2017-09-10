@@ -1,14 +1,17 @@
 import React, { Component } from 'react';
+import Gallery from './Gallery';
 
-export default class Gallery extends Component {
+export default class GallerySwitch extends Component {
 	constructor(props) {
 		super(props);
 
+		this.mountImages.bind(this);
 		this.fetchImages.bind(this);
+		this.narrowImages.bind(this);
+		this.changeImages.bind(this);
 
 		this.state = {
-			type: 'gallery',
-			direction: 'GET',
+			images: {};
 		}
 	}
 
@@ -39,13 +42,13 @@ export default class Gallery extends Component {
 	}
 
 	render() {
+		const images = this.state.images;
 
 		return(
 			<div>
-				{}
+				<Gallery images={ images }/>
 			</div>
 		);
 	}
 }
 
-//const images = this.state.images;

@@ -4,6 +4,7 @@ import Sidebar from "./Sidebar";
 import LoginPage from './LoginPage';
 import RegisterPage from './RegisterPage';
 import Gallery from './Gallery';
+<<<<<<< HEAD
 import Register from './Register';
 import Login from './Login';
 =======
@@ -25,6 +26,11 @@ const CategoryWrapper = (images, category) => (
   <ImageCollection images={images} category={category} />
 )
 >>>>>>> parent of dc440e4... oh dear god
+=======
+import CategoryPage from './CategoryPage';
+
+import {BrowserRouter, Switch, Route} from "react-router-dom";
+>>>>>>> parent of 590a466... i just want
 
 
 class App extends Component {
@@ -62,7 +68,9 @@ class App extends Component {
             <Route path="/~michele.james/" exact component={() => Homepage} />
             <Route path="/~michele.james/build/LoginPage" component={ LoginPage } />
             <Route path="/~michele.james/build/RegisterPage" component={ RegisterPage } />
-            <Route path="/~michele.james/build/CategoryPage" component={ CategoryPage } />  
+            <Route path="/~michele.james/build/CategoryPage" component={ CategoryPage }
+            <Route path="/~michele.james/build/CategoryPage" component={ CategoryPage } />
+            <Route path="/~michele.james/build/ImageCollection" component={ ImageCollection } />
           </Switch>
          </div>
 =======
@@ -93,6 +101,22 @@ class App extends Component {
 export default App;
 <<<<<<< HEAD
 
+// <Route path="/~michele.james/build/CategoryPage" component={() => CategoryWrapper(this.state.images, this.state.category)/>
 
+//<Route path="/~michele.james/build/" exact component={() => ImageCollectionWrapper(this.state.images)} />
+//<Route path="/~michele.james/build/" exact component={() => ImageCollectionWrapper(this.state.images)} />
+//<Route path="/~michele.james/build/image/:id" component={ImageDetail} />
+//<Route path="/~michele.james/build/categories" component={CategoryPage} />
+//<Route path="/~michele.james/build/" exact component={ App } />
+//<Route path="/~michele.james/build/Login" component={ Login } />
+//<Route path="/~michele.james/build/Register" component={ Register } />
+//<Route path="/~michele.james/build/CategoryPage" component={ CategoryPage } />
+//<Route path="/~michele.james/build/ImageCollection" component={ ImageCollection } />
+
+<<<<<<< HEAD
 =======
 >>>>>>> parent of dc440e4... oh dear god
+=======
+//<Route path="/~michele.james/build/categories/cat" component={() => CategoryWrapper(this.state.images, "cat")} />
+//<Route path="/~michele.james/build/categories/dog" component={() => CategoryWrapper(this.state.images, "dog")} />
+>>>>>>> parent of 590a466... i just want
