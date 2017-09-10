@@ -3,9 +3,8 @@ import Sidebar from "./Sidebar";
 import CategoryPage from "./CategoryPage";
 import ImageCollection from "./ImageCollection";
 import ImageDetail from "./ImageDetail"; 
-import Login from './Login';
 import Register from './Register';
-import Uploader from './Uploader';
+import Login from './Login';
 
 import {BrowserRouter, Switch, Route} from "react-router-dom";
 import './_App.css';
@@ -57,15 +56,21 @@ class App extends Component {
               <Route path="/~michele.james/build/categories/cat" component={() => CategoryWrapper(this.state.images, "cat")} />
               <Route path="/~michele.james/build/categories/dog" component={() => CategoryWrapper(this.state.images, "dog")} />
               <Route path="/~michele.james/build/categories" component={CategoryPage} />
-              <Route path="/~michele.james/build/" exact component={ App } />
               <Route path="/~michele.james/build/Login" component={ Login } />
               <Route path="/~michele.james/build/Register" component={ Register } />
-              <Route path="/~michele.james/build/Uploader" component={ Uploader } />
               <Route path="/~michele.james/build/CategoryPage" component={ CategoryPage } />
               <Route path="/~michele.james/build/ImageCollection" component={ ImageCollection } />
             </Switch>
           </div>
 
+              <br />
+              <br />
+              <Register />
+              <br />
+              <br />
+              <Login />
+              <br />
+              <br />
         </div>
       </BrowserRouter>
     );

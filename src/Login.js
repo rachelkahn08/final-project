@@ -1,19 +1,21 @@
 import React, {Component} from 'react';
 
-import {Link} from 'react-router-dom';
-
-export default class Login extends Component {
+class Login extends Component {
 	render(){
 		
 		return (
 			<div>
-				<form action="" method="POST">
-					Email Address: <input type="text" name="emailInput"/><br />
-					Password: <input type="password" name="passwordInput"/><br />
-				 	<input type="submit" value="save"/>
+				<form action="http://circuslabs.net/~michele.james/build/php/handle_login.php?action=login" method="post">
+					<label>E-Mail Address: </label>
+					<input type="text" name="email"/><br />
+					<label>Password: </label>
+					<input type="password" name="password"/><br />
+					<br />
+					<button type="submit" value="login">Login</button>
 				</form>
-			</div>
-				
+			</div>	
 		)
 	}
 }
+
+export default Login;

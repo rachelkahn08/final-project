@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 
-import {Link} from "react-router-dom";
+//import {Link} from "react-router-dom";
+
 class ImageCollection extends Component {
 
   // constructor (probs) {
@@ -9,7 +10,7 @@ class ImageCollection extends Component {
 
   render() {
 
-  	const {images} = this.props;
+  	//const {images} = this.props;
 
     return (
       <div className = "gallery">

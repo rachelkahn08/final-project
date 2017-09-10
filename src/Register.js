@@ -1,29 +1,35 @@
 import React, {Component} from 'react';
 
-import {Link} from 'react-router-dom';
-
-export default class Register extends Component {
+class Register extends Component {
 	render(){
 		
 		return (
 		
 			<div>
 				<title>Register</title> 
-				<form action="../../" method="POST">
-					Email Address: <input type="text" name="emailInput"/><br />
-					Password: <input type="password" name="passwordInput"/><br />
-					Password (again): <input type="password" name="passwardAgainInput"/><br/>
-					First Name: <input type="text" name="firstNameInput"/><br />
-					Last Name: <input type="text" name="lastNameInput"/><br />
-					 <input type="submit" value="save"/>
+
+				<form action="http://circuslabs.net/~michele.james/build/php/handle_register.php?action=register" method="post">
+					<label>First Name: </label>
+					<input type="text" name="first_name" /><br />
+					
+					<label>Last Name: </label>
+					<input type="text" name="last_name" /><br />
+					
+					<label>E-Mail Address: </label>
+					<input type="email" name="email" /><br />
+					
+					<label>Password: </label>
+					<input type="password" name="password"/><br />
+					
+					<label>Password (again): </label>
+					<input type="password" name="password_again"/><br />
+					
+					<br />
+					<button id="submit_button" type="submit" value="save">Save</button>
 				</form>
-				<a href="../../">Log in </a>
-			</div>
-		
-
-			
-
-				
+			</div>				
 		)
 	}
 }
+
+export default Register;
