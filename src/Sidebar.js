@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import { NavLink } from 'react-router-dom';
-// import './_Sidebar.css';
 
 class Sidebar extends Component {
 
@@ -37,7 +36,6 @@ class Sidebar extends Component {
           <NavLink className="NavLink" to="./" exact>Home</NavLink>
           <NavLink className="NavLink" to="./CategoryPage">Categories</NavLink>
           <NavLink className="NavLink" to="./ImageCollection">All Images</NavLink>
-          <NavLink className="NavLink" to="./Uploader">Upload Images</NavLink>
           <NavLink className="NavLink" to={ loggedInOption }>{ loginLinkText }</NavLink>
           <NavLink className="NavLink" to="./Register">Register</NavLink>
         </nav>

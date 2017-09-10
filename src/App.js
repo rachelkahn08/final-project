@@ -5,6 +5,8 @@ import RegisterPage from './RegisterPage';
 import Gallery from './Gallery';
 import CategoryPage from './CategoryPage';
 
+import {BrowserRouter, Switch, Route} from "react-router-dom";
+
 import { BrowserRouter, Switch, Route } from "react-router-dom";
 
 const Homepage = () => (
@@ -34,9 +36,11 @@ class App extends Component {
             <Route path="/~michele.james/" exact component={() => Homepage} />
             <Route path="/~michele.james/build/LoginPage" component={ LoginPage } />
             <Route path="/~michele.james/build/RegisterPage" component={ RegisterPage } />
+            <Route path="/~michele.james/build/CategoryPage" component={ CategoryPage }
             <Route path="/~michele.james/build/CategoryPage" component={ CategoryPage } />
+            <Route path="/~michele.james/build/ImageCollection" component={ ImageCollection } />
           </Switch>
-        </div>
+         </div>
       </BrowserRouter>
     );
   }
