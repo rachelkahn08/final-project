@@ -57,7 +57,7 @@ export default class GalleryHandler extends Component {
 
 		return(
 			<div>
-				{}
+				<h1>THIS IS A GALLERY HANDLER WOO</h1>
 			</div>
 		);
 	}

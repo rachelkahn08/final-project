@@ -15,6 +15,7 @@ class CategoryPage extends Component {
 
     return (
       <div className="CategoryPage">
+        <h1> THIS IS A CATEGORY PAGE </h1>
           <select className="CategoryForm">
             <option value="value1">Value 1</option>
             <option value="value2">Value 2</option>
