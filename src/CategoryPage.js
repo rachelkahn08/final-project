@@ -1,14 +1,19 @@
 import React, { Component } from 'react';
-import {Link} from "react-router-dom";
 import GalleryHandler from './GalleryHandler';
 
 class CategoryPage extends Component {
   constructor(props) {
     super(props);
+
+    this.categoryFormListener.bind(this);
   }
 
   componentDidMount () {
 
+  }
+
+  categoryFormListener() {
+    
   }
 
   render() {

@@ -5,6 +5,7 @@ class Login extends Component {
 		
 		return (
 			<div>
+				<h1> THIS IS THE LOGIN PAGE </h1>
 				<form action="http://circuslabs.net/~michele.james/build/php/handle_login.php?action=login" method="post">
 					<label>E-Mail Address: </label>
 					<input type="text" name="email"/><br />

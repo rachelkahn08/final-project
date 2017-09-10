@@ -9,9 +9,9 @@ import CategoryPage from "./CategoryPage";
 import GalleryHandler from './GalleryHandler';
 
 
-const HomepageWrapper = () => (
-  <GalleryHandler />
-);
+// const HomepageWrapper = () => (
+//   <GalleryHandler />
+// );
 
 export default class App extends Component {
 
@@ -30,16 +30,16 @@ export default class App extends Component {
   render() {
     return (
 
-      <BrowserRouter className="App">
-        <div className="App__body">
-          <Sidebar/>
-          <Switch>
+      <BrowserRouter>
+        <div className="App">
+          <Switch className="App__body">
+            <Sidebar/>
             <Route path="/~michele.james/build/" exact component={ GalleryHandler } />
             <Route path="/~michele.james/build/LoginPage" component={ Login } />
             <Route path="/~michele.james/build/RegisterPage" component={ Register } />
             <Route path="/~michele.james/build/CategoryPage" component={ CategoryPage } />
           </Switch>
-         </div>
+        </div>
       </BrowserRouter>
     );
   }
