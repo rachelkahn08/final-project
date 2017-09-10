@@ -32,9 +32,9 @@ export default class App extends Component {
 
       <BrowserRouter>
         <div className="App">
+          <Sidebar/>
           <Switch className="App__body">
-            <Sidebar/>
-            <Route path="/~michele.james/build/" exact component={ GalleryHandler } />
+            <Route path="/~michele.james/build" exact component={ GalleryHandler } />
             <Route path="/~michele.james/build/LoginPage" component={ Login } />
             <Route path="/~michele.james/build/RegisterPage" component={ Register } />
             <Route path="/~michele.james/build/CategoryPage" component={ CategoryPage } />

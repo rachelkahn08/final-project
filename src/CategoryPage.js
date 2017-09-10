@@ -13,7 +13,7 @@ class CategoryPage extends Component {
   }
 
   categoryFormListener() {
-    
+
   }
 
   render() {
@@ -27,10 +27,12 @@ class CategoryPage extends Component {
             <option value="value3">Value 3</option>
             <option value="value4">Value 4</option>
           </select>
-        <GalleryHandler type='category' queryInputs={ this.state.queryInputs }/>
+        <GalleryHandler type='category' />
       </div>
     );
   }
 }
 
 export default CategoryPage;
+
+//queryInputs={ this.state.queryInputs }

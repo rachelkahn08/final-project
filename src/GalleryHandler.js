@@ -10,7 +10,6 @@ export default class GalleryHandler extends Component {
 		this.state = {
 			type: 'gallery',
 			direction: 'GET',
-			queryInputs: '',
 			returnedData: {},
 		}
 	}
@@ -25,23 +24,30 @@ export default class GalleryHandler extends Component {
 		}
 
 		if (this.props.queryInputs) {
-			this.setState({queryInputs: this.props.queryInputs});
+
+			let queryInputs = this.props.queryInputs;
+				queryInputs = Object.entries(queryInputs);
+
+				for (var i = queryInputs.length - 1; i >= 0; i--) {
+					queryInputs += '&' + queryInputs[i][0] + '=' + queryInputs[i][1];
+				}
+
+			console.log(queryInputs);
+			this.setState({queryInputs: queryInputs});
 		}
 
-		this.fetchImages(this.props.type, this.props.direction, this.props.queryInputs);
+		this.fetchImages(this.state.type, this.state.direction, this.state.queryInputs);
 	}
 
 	fetchImages(type, direction, queryInputs) {
 
 		let url = 'http://circuslabs.net/~michele.james/build/php/handle_php.php?type=' + type;
 		
-		var stringifyInputs = Object.entries(queryInputs);
-
-		for (var i = stringifyInputs.length - 1; i >= 0; i--) {
-			url += '&' + (stringifyInputs[i][0] + '=' + stringifyInputs[i][1]);
+		if (this.state.queryInputs) {
+			url += queryInputs;
 		}
 
-		fetch(url, {
+		fetch(url, 
 			method: direction,
 			headers: {
 				'Content-Type': 'application/json',
@@ -57,8 +63,7 @@ export default class GalleryHandler extends Component {
 
 		return(
 			<div>
-				<h1>THIS IS A GALLERY HANDLER WOO</h1>
-				<Gallery />
+				<Gallery jsonData={ this.state.returnedData }/>
 			</div>
 		);
 	}
