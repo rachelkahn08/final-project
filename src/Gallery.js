@@ -23,14 +23,14 @@ export default class Gallery extends Component {
 		var stringifyInputs = Object.entries(queryInputs);
 
 		for (var i = stringifyInputs.length - 1; i >= 0; i--) {
-			if (i  )
-			url += (stringifyInputs[i][0] + '=' + stringifyInputs[i][1]);
+			url += '&' + (stringifyInputs[i][0] + '=' + stringifyInputs[i][1]);
 		}
 
 		fetch(url, {
 			method: direction,
 			headers: {
-				'Content-Type': 'application/json'
+				'Content-Type': 'application/json',
+				'Accept': 'application/json',
 			}
 		}).then( response => response.json() )
 		.then( json => {
@@ -39,13 +39,13 @@ export default class Gallery extends Component {
 	}
 
 	render() {
+		const images = this.state.images;
 
 		return(
 			<div>
-				{}
+				<Gallery images={ images }/>
 			</div>
 		);
 	}
 }
 
-//const images = this.state.images;
