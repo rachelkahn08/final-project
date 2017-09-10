@@ -1,29 +1,49 @@
 import React, { Component } from 'react';
-import Gallery from './Gallery';
+import {Link} from "react-router-dom";
 
-export default class CategoryPage extends Component {
-  constructor(props) {
-    super(props);
+class CategoryPage extends Component {
 
-    this.state = { 
+  // constructor (probs) {
+  //   super(probs);
+  // }
 
-    }
-  }
+  componentDidMount () {
+    fetch('http://circuslabs.net/~ryan.rodd/php/project16/api/?data=allimages')
+      .then(response => {
+        console.log("response", response);
+        return response.json();
+      })
+      .then(data => {
+        this.setState({
+          images: data
+      })
+    })
+  } 
 
-  render() { 
+
+
+  render() {
+
+   	//const {images} = this.props;
 
     return (
-      <div className="CategoryPage">
-        <select className="CategoryForm">
-          <option value="value1">Value 1</option>
-          <option value="value2">Value 2</option>
-          <option value="value3">Value 3</option>
-          <option value="value4">Value 4</option>
-        </select>
-        <Gallery type='category' direction='GET' queryInputs={ this.state.queryInputs }/>
+      <div className = "image-detail">
+      	IMAGE DETAIL
+        <br/>
+        <br/>
+        <Link to={`/categories/cat`}>
+          CAT<br/>
+        </Link>
+
+        <Link to={`/categories/dog`}>
+          DOG<br/>
+        </Link>
+
+
       </div>
 
     );
   }
 }
 
+export default CategoryPage;
