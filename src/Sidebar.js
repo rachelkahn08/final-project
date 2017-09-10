@@ -1,16 +1,11 @@
 import React, { Component } from 'react';
 import { NavLink } from 'react-router-dom';
-<<<<<<< HEAD
-=======
 import CategoryPage from './CategoryPage';
-import ImageCollection from './ImageCollection';
-import './_Sidebar.css';
->>>>>>> parent of dc440e4... oh dear god
 
 class Sidebar extends Component {
 
-  constructor (probs) {
-    super(probs);
+  constructor (props) {
+    super(props);
 
     this.isLoggedIn.bind(this);
 
@@ -39,6 +34,7 @@ class Sidebar extends Component {
       <div className="Sidebar">
         <figure className="logo"></figure>
         <nav className="NavLinkContainer">
+          <NavLink className="NavLink" to='./'>Home</NavLink>
           <NavLink className="NavLink" to="./CategoryPage">Categories</NavLink>
           <NavLink className="NavLink" to="./ImageCollection">All Images</NavLink>
           <NavLink className="NavLink" to={ loggedInOption }>{ loginLinkText }</NavLink>

@@ -1,16 +1,16 @@
 import React, { Component } from 'react';
+import { BrowserRouter, Switch, Route } from "react-router-dom";
 
 
 import Sidebar from "./Sidebar";
-import LoginPage from './LoginPage';
-import RegisterPage from './RegisterPage';
+import Login from './Login';
+import Register from './Register';
 import CategoryPage from "./CategoryPage";
-import Gallery from './Gallery';
+import GalleryHandler from './GalleryHandler';
 
-import {BrowserRouter, Switch, Route} from "react-router-dom";
 
-const Homepage = () => (
-  <Gallery type='gallery' direction='GET' />
+const HomepageWrapper = () => (
+  <GalleryHandler />
 );
 
 export default class App extends Component {
@@ -30,13 +30,13 @@ export default class App extends Component {
   render() {
     return (
 
-      <BrowserRouter>
-        <div className="App">
+      <BrowserRouter className="App">
+        <div className="App__body">
           <Sidebar/>
           <Switch>
-            <Route path="/~michele.james/" exact component={() => Homepage} />
-            <Route path="/~michele.james/build/LoginPage" component={ LoginPage } />
-            <Route path="/~michele.james/build/RegisterPage" component={ RegisterPage } />
+            <Route path="/~michele.james/build/" exact component={ GalleryHandler } />
+            <Route path="/~michele.james/build/LoginPage" component={ Login } />
+            <Route path="/~michele.james/build/RegisterPage" component={ Register } />
             <Route path="/~michele.james/build/CategoryPage" component={ CategoryPage } />
           </Switch>
          </div>
