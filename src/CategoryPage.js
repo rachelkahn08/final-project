@@ -1,23 +1,21 @@
 import React, { Component } from 'react';
-import GalleryHandler from './GalleryHandler';
 
 class CategoryPage extends Component {
   constructor(props) {
     super(props);
 
     this.categoryFormListener.bind(this);
+
+    this.state = {
+      key: '',
+    }
   }
 
-  componentDidMount () {
-
-  }
-
-  categoryFormListener() {
-
-  }
+  
 
   render() {
-
+    const KEY = this.state.key;
+    const getImages = this.props.galleryHandler('GET', KEY);
     return (
       <div className="CategoryPage">
         <h1> THIS IS A CATEGORY PAGE </h1>
@@ -27,7 +25,6 @@ class CategoryPage extends Component {
             <option value="value3">Value 3</option>
             <option value="value4">Value 4</option>
           </select>
-        <GalleryHandler type='category' />
       </div>
     );
   }
