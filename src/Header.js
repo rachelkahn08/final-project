@@ -1,40 +1,31 @@
 import React, { Component } from 'react';
-import { NavLink } from 'react-router-dom';
-import './App.css';
+import { BrowserRouter, Switch, Route } from 'react-router-dom';
+
+import App from './App';
+import Login from './Login';
+import Register from './Register';
+import Uploader from './Uploader';
+import ImageCollection from './ImageCollection';
+import CategoryPage from './CategoryPage';
 
 class Header extends Component {
 
-  constructor (probs) {
-    super(probs);
-
-    this.isLoggedIn.bind(this);
-
-    this.state = {
-    	loggedInOption: './CategoryPage',
-    }
-  }
-
-  isLoggedIn(loginState) {
-
-  	loginState = 'ImageDetail';
-
-  	this.setState({ loggedInOption: loginState });
-
-  }
-
   render() {
-  	const loggedInOption = this.state.loggedInOption;
 
     return (
-    	<header>
-    		<nav>
-    			<NavLink to="./CategoryPage" />
-    			<NavLink to="./ImageCollection" />
-    			<NavLink to={ loggedInOption } />
-    		</nav>
-    	</header>
+        <Switch>
+          <Route path="/" exact component={ App } />
+          <Route path="/Login" component={ Login } />
+          <Route path="/Register" component={ Register } />
+          <Route path="/Uploader" component={ Uploader } />
+          <Route path="/CategoryPage" component={ CategoryPage } />
+          <Route path="/ImageCollection" component={ ImageCollection } />
+        </Switch>
     );
   }
 }
 
 export default Header;
+
+
+// *****DONT FORGET TO CHANGE THE ROUTES TO INCLUDE /~MICHELLE ETC

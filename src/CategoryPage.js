@@ -1,51 +1,35 @@
 import React, { Component } from 'react';
-import './App.css';
-
-import {Link} from "react-router-dom";
 
 class CategoryPage extends Component {
+  constructor(props) {
+    super(props);
 
-  // constructor (probs) {
-  //   super(probs);
-  // }
+    this.categoryFormListener.bind(this);
 
-  componentDidMount () {
-    fetch('http://circuslabs.net/~ryan.rodd/php/project16/api/?data=allimages')
-      .then(response => {
-        console.log("response", response);
-        return response.json();
-      })
-      .then(data => {
-        this.setState({
-          images: data
-      })
-    })
-  } 
+    this.state = {
+      key: '',
+    }
+  }
 
-
+  
 
   render() {
-
-   	//const {images} = this.props;
-
+    const KEY = this.state.key;
+    const getImages = this.props.galleryHandler('GET', KEY);
     return (
-      <div className = "image-detail">
-      	IMAGE DETAIL
-        <br/>
-        <br/>
-        <Link to={`/categories/cat`}>
-          CAT<br/>
-        </Link>
-
-        <Link to={`/categories/dog`}>
-          DOG<br/>
-        </Link>
-
-
+      <div className="CategoryPage">
+        <h1> THIS IS A CATEGORY PAGE </h1>
+          <select className="CategoryForm">
+            <option value="value1">Value 1</option>
+            <option value="value2">Value 2</option>
+            <option value="value3">Value 3</option>
+            <option value="value4">Value 4</option>
+          </select>
       </div>
-
     );
   }
 }
 
 export default CategoryPage;
+
+//queryInputs={ this.state.queryInputs }
